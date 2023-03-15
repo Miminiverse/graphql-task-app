@@ -7,11 +7,7 @@ import { useNavigate } from 'react-router-dom'
 const AddTodo = () => {
     const navigate = useNavigate()
     const [todo, setTodo] = useState({})
-    const [createPost, { isadding }] = useMutation(CREATE_POST, {
-        refetchQueries: [
-            {query: getTodo}
-        ]
-    })
+    const [createPost, { isadding }] = useMutation(CREATE_POST)
     if (isadding) return <p>Adding...</p>
 
     const handleOnChange = (e) => {
